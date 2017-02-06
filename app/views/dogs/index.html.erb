@@ -7,6 +7,7 @@
       <th>Name</th>
       <th>Breed</th>
       <th>Age</th>
+      <th>Profile</th>
     </tr>
   </thead>
   <tbody>
@@ -16,6 +17,7 @@
         <td><%= dog.name %></td>
         <td><%= dog.breed %></td>
         <td><%= dog.age %></td>
+        <td><%= link_to("Show", dog_path(dog)) %></td>
       </tr>
     <% end %>
   </tbody>

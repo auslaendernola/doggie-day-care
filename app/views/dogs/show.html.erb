@@ -1,0 +1,20 @@
+<!-- Dog's name -->
+<h1>Details for: <%= @dog.name %></h1>
+<!-- Dog's id -->
+<p>
+  <strong>ID: <%= @dog.id %></strong>
+</p>
+<!-- Breed -->
+<p>
+  <strong>Breed: <%= @dog.breed %></strong>
+</p>
+<!-- age -->
+<p>
+  <strong>Age: <%= @dog.age %></strong>
+</p>
+<!-- date added -->
+<p>
+  <strong>Date Added: <%= @dog.created_at.stamp("5 Aug 2017") %></strong>
+</p>
+
+<%= link_to("The Dogs of X", dogs_path) %>

@@ -1,10 +1,13 @@
 class DogsController < ApplicationController
+
   def index
     @dogs = Dog.all
   end
+
   def new
     @dog = Dog.new
   end
+
   def create
     @dog = Dog.new(dog_params)
 
@@ -14,6 +17,10 @@ class DogsController < ApplicationController
       flash.now[:notice] = "Something went wrong, and we couldn't save your dog."
       render :new
     end
+  end
+
+  def show
+    @dog = Dog.find(params[:id])
   end
 
   private
