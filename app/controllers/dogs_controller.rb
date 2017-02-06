@@ -26,6 +26,17 @@ class DogsController < ApplicationController
   def edit
     @dog = Dog.find(params[:id])
   end
+
+  def update
+    @dog = Dog.find(params[:id])
+    if @dog.update(dog_params)
+      redirect_to dogs_url, notice: "Successfully Saved"
+    else
+      flash.now[:notice] = "Something went wrong, and we couldn't update #{@dog.name}."
+      render :edit
+    end
+  end
+
   private
 
   def dog_params
